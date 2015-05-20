@@ -4,6 +4,7 @@
 # Integration project (ci.debian.net).
 
 import sys
+import init
 
 if len(sys.argv) < 2 or sys.argv[1] == 'help':
     print('usage: orbit <command>')
@@ -23,7 +24,7 @@ if option == 'add':
 elif option == 'collect':
     pass
 elif option == 'init':
-    pass
+    init.Initialization().create_configuration()
 elif option == 'packages':
     pass
 elif option == 'remove':
