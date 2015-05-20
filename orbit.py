@@ -4,7 +4,7 @@
 # Integration project (ci.debian.net).
 
 import sys
-import init
+import init, storage
 
 if len(sys.argv) < 2 or sys.argv[1] == 'help':
     print('usage: orbit <command>')
@@ -20,7 +20,9 @@ if len(sys.argv) < 2 or sys.argv[1] == 'help':
 option = sys.argv[1]
 
 if option == 'add':
-    pass
+    store = storage.Storage()
+    for package in sys.argv[2:]:
+        store.add_package(package)
 elif option == 'collect':
     pass
 elif option == 'init':
@@ -28,6 +30,8 @@ elif option == 'init':
 elif option == 'packages':
     pass
 elif option == 'remove':
-    pass
+    store = storage.Storage()
+    for package in sys.argv[2:]:
+        store.remove_package(package)
 else:
     print('Unknown command. Run `orbit help` for available commands.')
