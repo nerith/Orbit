@@ -4,7 +4,7 @@
 # Integration project (ci.debian.net).
 
 import sys
-import init, storage
+import init, storage, collector
 
 if len(sys.argv) < 2 or sys.argv[1] == 'help':
     print('usage: orbit <command>')
@@ -24,7 +24,9 @@ if option == 'add':
     for package in sys.argv[2:]:
         store.add_package(package)
 elif option == 'collect':
-    pass
+    collection = collector.Collector()
+    for package in collection.load_packages():
+        collection.get_status('unstable', 'amd64', package)
 elif option == 'init':
     init.Initialization().create_configuration()
 elif option == 'packages':
