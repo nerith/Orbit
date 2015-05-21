@@ -30,7 +30,9 @@ elif option == 'collect':
 elif option == 'init':
     init.Initialization().create_configuration()
 elif option == 'packages':
-    pass
+    collection = collector.Collector()
+    for package in collection.load_packages():
+        print(package)
 elif option == 'remove':
     store = storage.Storage()
     for package in sys.argv[2:]:
