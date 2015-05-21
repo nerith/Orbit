@@ -3,7 +3,10 @@ Orbit enables data collection of packages from
 <a href='http://ci.debian.net'>ci.debian.net</a>.
 
 ## Getting Started
-To get started, install Python 3. On a Debian based system, run
+To get started, add the location of this directory to your PATH
+and run `chmod +x orbit`.
+
+Once that is done, install Python 3. On a Debian based system, run
 `sudo apt-get install python3` to install Python 3. Once you have
 Python 3 installed, run `orbit init` to generate a basic config file.
 
