@@ -1,6 +1,6 @@
 #Orbit
 Orbit enables data collection of packages from
-<a href='http://ci.debian.net'>ci.debian.net</a>.
+[ci.debian.net](https://ci.debian.net).
 
 ## Getting Started
 To get started, add the location of this directory to your PATH
